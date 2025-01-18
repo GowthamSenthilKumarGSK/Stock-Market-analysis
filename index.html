@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/stockmarket.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="date"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Analysis</h1>
+        <p>Welcome to stock analysis tool. Please fill out the form below to get started.</p>
+        <p>By Nithin.V (22PD24), Anuvarsana.K (22PD06), Chaithanya N (22PD09)</p>
+
+        <form action="/analyze" method="post">
+            <label for="start_date">Start Date (YYYY-MM-DD):</label>
+            <input type="text" id="start_date" name="start_date" required pattern="\d{4}-\d{2}-\d{2}">
+            
+            <label for="end_date">End Date (YYYY-MM-DD):</label>
+            <input type="text" id="end_date" name="end_date" required pattern="\d{4}-\d{2}-\d{2}">
+            
+            <label for="company">Company Symbol:</label>
+            <input type="text" id="company" name="company" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+        
+        <p>Not sure about the company symbol? <a href="/companylist" target="_blank">Find it here</a>.</p>
+    </div>
+</body>
+</html>
