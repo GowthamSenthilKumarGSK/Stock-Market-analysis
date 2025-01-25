@@ -1,0 +1,6 @@
+Flask==<latest-version>
+pandas==<latest-version>
+matplotlib==<latest-version>
+yfinance==<latest-version>
+beautifulsoup4==<latest-version>
+requests==<latest-version>
